@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <link rel="stylesheet" type="text/css" href="../css/homePageForTopAdmin.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_333342_aqh3avwkuwstt9.css"> -->
+  
+  <!-- <script src="../lib/china.js"></script> -->
+  
+</head>
+<body>
+
+	<div id="insideContain" style="margin: 0;">
+		<div id="centerContain">
+			<div class="title">热词词云</div>
+			<div id="wordsCloudGraph"></div>
+		</div>
+		<div id="rightContain">
+			<div class="knowledgePercentPart">
+				<div class="titleBar">知识占比</div>
+				<div class="knowledgePercentPartGraph">
+					<iframe src="pie-simple.html" frameborder=0  scrolling="no" border=0   width=100%   height=100% ></iframe>
+				</div>
+			</div>
+			<div class="departUpdataSituation">
+				<div class="titleBar">部门更新情况</div>
+				<div class="departUpdataSituationGraph">
+					<iframe  src="multiple-x-axis.html" frameborder=0 scrolling="no"  border=0   width=100%   height=100% ></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+    <script src="../lib/echarts.min.js"></script>
+    <script src="../lib/echarts-wordcloud.min.js"></script>
+    <script type="text/javascript" src="../js/homePageForTopAdmin.js" ></script>
+</body>
+</html>

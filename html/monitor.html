@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <link rel="stylesheet" type="text/css" href="../css/monitor.css">
+  <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../lib/font/iconfont.css"> -->
+  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_333342_k0f3o3hftrb8d7vi.css">
+</head>
+ <body>
+ 	<div id="monitorContain" class="container-fluid">
+ 		<div class="monitorCenter">
+ 			<div class="monitorTopBar">
+ 				<div class="logoPos">
+ 					<i class="iconfont icon-shenheguanli"></i>
+ 					<span>文档监控</span>
+ 				</div>
+ 			</div>
+ 			<div class="monitorBottomContain">
+ 				<div class="monitorBottomContainDeal">
+ 					<template v-for="(item,index) in items">
+ 						<div class="spaceBar" v-if="item.isShowSpaceBar"></div>
+	 					<div class="containDealModule">
+	 						<div class="moduleLogo" v-bind:style="{color:item.itemColor}">
+	 							<i class="iconfont" v-bind:class="[item.iconfontLogo]"></i>
+	 						</div>
+	 						<span>{{item.importantMessage}}</span>
+	 						<span style="font-size: 16px;">{{item.particularMessage}}</span>
+	 						<div class="moduleItems">
+	 							<iframe v-bind:src="item.linkUrl" frameborder=0   border=0   width=100%   height=100% ></iframe>
+	 						</div>
+	 					</div>
+ 					</template>
+
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class="monitorRightSideBar">
+ 			<template v-for="(sideBarItem,index) in sideBarItems">
+ 				<div>
+	 				<div class="sideBarTopBar">
+	 					<span>{{sideBarItem.title}}</span>
+	 				</div>
+	 				<div class="sideBarGraph">
+	 					<iframe v-bind:src="sideBarItem.linkUrl" frameborder=0   border=0   width=100%   height=100% ></iframe>
+	 				</div>
+	 			</div>
+ 			</template>
+ 		</div>
+ 	</div>
+</body>
+
+<script src="https://cdn.bootcss.com/vue/2.4.1/vue.js"></script>
+<script type="text/javascript" src="../js/monitor.js" ></script>
+</html>

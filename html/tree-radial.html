@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <style type="text/css">
+/*   canvas{
+    padding-top: 60px!important;
+    padding-bottom: 30px!important;
+   }*/
+   </style>
+   <body style="height: 100%; margin: 0;background-color: #fff;">
+        <div style="position: absolute;top:20px;left:30px;height: 20px;font-size: 20px;font-weight: bold;color: #000;">知识目录</div>
+       <div id="container" style="height: 100%;">
+
+       </div>
+       <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+        <script type="text/javascript" src="../lib/echarts.js"></script>
+        <script type="text/javascript"  src="../lib/theme.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+myChart.showLoading();
+$.get('../json/flare.json', function (data) {
+    myChart.hideLoading();
+
+    myChart.setOption(option = {
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove'
+        },
+        series: [
+            {
+                type: 'tree',
+
+                data: [data],
+
+                top: '18%',
+                bottom: '14%',
+
+                layout: 'radial',
+
+                symbol: 'emptyCircle',
+
+                symbolSize: 7,
+
+                initialTreeDepth: 3,
+
+                animationDurationUpdate: 750
+
+            }
+        ]
+    });
+});;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+myChart.on('click', function (params) {
+    var div = window.parent.document.getElementById('insideIframe');
+    console.log(div);
+    div.src = "readContent.html"
+    // div.children[0].src = "outlink/radar_third.html";
+});
+       </script>
+   </body>
+</html>

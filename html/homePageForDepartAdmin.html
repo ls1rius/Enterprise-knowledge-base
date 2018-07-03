@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../css/module.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/homePageForDepartAdmin.css">
+  <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../lib/font/iconfont.css"> -->
+  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_333342_w3ijxy57xziu23xr.css">
+  <!-- <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script> -->
+</head>
+<body>
+	<div id="insideContain" style="margin: 0;">
+		<div class="centerContain" v-if="!isReviewing">
+			<div class="headTitle">
+				<span>审核列表</span>
+				<select>
+					<template v-for="departItem in departs">
+						<option v-bind:value="departItem.index">
+							{{departItem.departName}}
+						</option>
+					</template>
+				</select>
+			</div>
+			<div class="fileList">
+				<div class="fileListBoxContain" 
+				v-for="(fileListItem,index) in fileListData"
+				v-on:click="startReview(index)">
+					<img v-bind:src="fileListItem.fileListImage">
+					<div class="fileListItem">
+						<span class="fileListTitle">
+							{{fileListItem.fileListTitle}}
+						</span>
+						<span class="fileListInfo">
+							<span>{{fileListItem.fileListInfoAuthor}}</span>
+							<span style="margin-left: 10px">{{fileListItem.fileListInfoTime}}</span>
+						</span>
+					</div>
+					<div class="fileListStatus"
+					v-bind:style="{color:fileListItem.fileListStatus=='通过'?'#2FABA5':fileListItem.fileListStatus=='未通过'?'#FF0000':'#999999'}">
+						{{fileListItem.fileListStatus}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centerContain" 
+		v-if="isReviewing" 
+		transition="slide-edit-box">
+			<div class="contentTitle">
+				<div>{{fileListData[curIndex].fileListTitle}}
+					<p style="margin: 0;padding:0;font-size: 16px;" 
+					v-bind:style="{color:curStatus=='通过'?'#2FABA5':curStatus=='未通过'?'#FF0000':'#999999'}">
+						({{curStatus}})
+					</p>
+				</div>
+				<i class="iconfont icon-gengduo-tianchong" style="cursor:pointer;" v-on:click="showDropDown()">
+					<ul class="dropDown" v-if="isShowDropDown">
+						<li v-on:click="curStatus='通过'">通过</li>
+						<li v-on:click="curStatus='未通过'">不通过</li>
+						<li v-on:click="curStatus='待审阅'">待定</li>
+						<li v-on:click="confirmToDelete()">从列表删除</li>
+						<li v-on:click="backToMain()">返回</li>
+					</ul>
+				</i>
+			</div>
+			<div class="contentBox">
+				<img src="../image/image_tmp.jpg" style="width: 640px;height: 11193px; ">
+			</div>
+		</div>
+		<div id="rightContain">
+			<div class="rightSearchBox">
+				<div class="selectPart">
+					<span>搜索</span>
+				</div>
+				<div class="searchPart">
+					<input type="text" placeholder="请输入关键字">
+					<div class="searchPartBtn">搜&nbsp索</div>
+				</div>
+			</div>
+			<div class="situationBox">
+				<span class="headTitle">
+					<span>部门概况</span>
+					<select>
+						<template v-for="departItem in departs">
+							<option v-bind:value="departItem.index">
+								{{departItem.departName}}
+							</option>
+						</template>
+					</select>
+				</span>
+				<div class="situationGraph">
+					<iframe src="pie-simple.html" frameborder=0  scrolling="no" border=0   width=100%   height=100% ></iframe>
+				</div>
+			</div>
+			<div class="catalogBox">
+				<span class="headTitle">更改目录</span>
+				<div class="catalogGraph">
+					<iframe src="graph-npm-admin.html" frameborder=0   scrolling="no" border=0   width=100%   height=100% frameborder="0"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://cdn.bootcss.com/vue/2.4.1/vue.js"></script>
+<!-- <script type="text/javascript" src="../js/module.js" ></script> -->
+<script type="text/javascript" src="../js/homePageForDepartAdmin.js" ></script>
+
+</html>

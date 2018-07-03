@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../css/module.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/homePageForNormal.css">
+  <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../lib/font/iconfont.css"> -->
+
+  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_333342_aqh3avwkuwstt9.css">
+
+</head>
+<body>
+	<div id="insideContain" style="margin: 0;">
+		<div id="centerContain">
+			<div class="introModule">
+				<div id="leftCarousel" class="leftCarousel carousel slide">
+					
+					<!-- 轮播（Carousel）指标 -->
+					<ol class="carousel-indicators">
+						<template  v-for="(carouselItem,index) in carouselData">
+							<li data-target="#leftCarousel" v-bind:data-slide-to="parseInt(index)" v-bind:class="carouselItem.isActive"></li>
+						</template>
+					</ol>   
+					<!-- 轮播（Carousel）项目 -->
+					<div class="carousel-inner" >
+						<template v-for="carouselItem in carouselData">
+
+							<div class="item" v-bind:class="carouselItem.isActive">
+								<span class="carouselIntro">{{carouselItem.carouseIntroWords}}</span>
+								<img v-bind:src="carouselItem.showPic">
+							</div>
+						</template>
+					</div>
+				</div> 
+				<div id="rightIntro">
+					<span>
+						{{introWords}}
+					</span>
+				</div>
+			</div>
+			<div class="searchModule">
+				<div class="headTitle">
+					<span>热门搜索</span>
+				</div>
+				<div class="buzzwordContain">
+					<span v-for="buzzwordsItem in buzzwords">
+						{{buzzwordsItem.buzzword}}
+					</span>
+				</div>
+				<div class="searchBoxContain">
+					<input type="text" placeholder="请输入关键字...">
+					<div class="searchBtn">搜&nbsp索</div>
+				</div>
+			</div>
+			<div class="recommendModule">
+				<div class="headTitle">
+					<span>推荐内容</span>
+					<i class="iconfont icon-shuaxinzhongjieban"></i>
+				</div>
+				<div class="recommendBoxContain" v-for="recommendItem in recommendData">
+					<img v-bind:src="recommendItem.recommendImage">
+					<div class="recommendItem">
+						<span class="recommendTitle">
+							{{recommendItem.recommendTitle}}
+						</span>
+						<span class="recommendInfo">
+							<span>{{recommendItem.recommendInfoAuthor}}</span>
+							<span style="margin-left: 10px">{{recommendItem.recommendInfoTime}}</span>
+						</span>
+					</div>
+					<div class="recommendStatistcsItem">
+						<span class="recommendStatistcsCount">
+							{{recommendItem.recommendStatistcsCount}}
+						</span>
+						<span class="recommendStatistcsInfo">
+							<span>阅读量</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="rightContain">
+			<div class="message">
+				<div class="messageHeadTitle">我的通知</div>
+				<div style="width: 100%;height:300px;min-height:300px;display: flex!important;flex-wrap: wrap;overflow: auto;">
+					<div class="messageBoxContain" 
+					v-for="messageItem in messageData">
+						<span class="messageContain" 
+						v-html="messageItem.messageContain">
+						</span>
+						<span class="messageTime">
+							<p>{{messageItem.messageTime}}</p>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="statistcsGraph">
+				<div class="statistcsGraphTitle">数据提交情况</div>
+				<iframe src="multiple-x-axis.html" frameborder=0  scrolling="no" border=0   width=100%   height=100% ></iframe>
+			</div>
+		</div>
+	</div>
+
+</body>
+ <script type="text/javascript" src="../lib/jquery.min.js"></script>
+ <script type="text/javascript" src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+ <script type="text/javascript" src="../lib/vue.js"></script>
+ <script type="text/javascript" src="../lib/vue-resource.min.js"></script>
+
+<!-- <script type="text/javascript" src="../js/module.js" ></script> -->
+<script type="text/javascript" src="../js/homePageForNormal.js" ></script>
+</html>

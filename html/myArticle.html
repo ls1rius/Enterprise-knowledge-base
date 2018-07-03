@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../css/module.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/myArticle.css">
+  <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../lib/font/iconfont.css"> -->
+  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_333342_x6xf4ywci1du0udi.css">
+  <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <link href="../lib/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
+  <script src="../lib/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
+  <script src="../lib/bootstrap-datepicker-master/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+</head>
+<body>
+
+	<div id="insideContain" style="margin: 0;">
+		<div id="centerContain">
+			<div class="choosePart">
+				<span class="title">我的知识</span>
+				<div class="chooseBottom">
+					<div class="chooseBox">
+						<!-- <div class="changeBar"></div> -->
+						<template v-for="chooseItem in chooseData">
+							<div class="chooseItemSpace"></div>
+							<div class="chooseItem">
+								<i class="iconfont" v-bind:class="[chooseItem.icon]" v-bind:style="{color:chooseItem.iconColor}"></i>
+								<span>{{chooseItem.choose}}</span>
+							</div>
+						</template>
+						
+						
+					</div>
+					<div class="changePickType">
+						<span class="pickItem" v-bind:style="{'color':isPassPart?'red':'#ccc'}" v-on:click="changePickType('p')">审核通过</span>
+						<span class="pickItem" v-bind:style="{'color':isFailPart?'red':'#ccc'}"
+						v-on:click="changePickType('f')">审核失败</span>
+					</div>
+				</div>
+			</div>
+			<div class="searchResult">
+					<div class="searchResultContain">
+						<div class="searchResultContainBox"  v-for="result in searchResults">
+							<div class="searchResultIntro">
+								<div class="searchResultTitle">
+									{{result.title}}
+								</div>
+								<img v-bind:src="result.textImage">
+								<div class="searchResultIntroWords">
+									<span>{{result.text}}</span>
+									<div style="display: flex;
+									flex-wrap: nowrap;width: 100%;
+									height: 14%; align-items: center;">
+										<p>关键词:</p>
+										<div class="keyWords" >
+											<i v-for="word in result.keyWords">{{word.item}}</i>
+										</div>
+										<div class="readAllBtn">阅读全文</div>
+									</div>
+								</div>
+							</div>
+							<div class="searchResultAuthor">
+								<div class="infoBox">
+									<img v-bind:src="result.authorImage">
+									<span>{{result.authorName}}</span>
+								</div>
+								<div class="infoBox">
+									<i class="iconfont icon-xinxi">&nbsp&nbsp&nbsp{{result.messageCount}}</i>
+									<i  class="iconfont icon-msnui-love">&nbsp&nbsp&nbsp{{result.likeCount}}</i>
+								</div>
+								<div class="infoBox">
+									<i class="iconfont icon-shijian">&nbsp&nbsp&nbsp{{result.publishTime}}</i>
+									<i class="iconfont icon-yonghu1">&nbsp&nbsp&nbsp{{result.authorName}}</i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="searchResultPageBox">
+						<div class="page">
+							<ul class="pagination pagination-sm">
+							</ul>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div id="rightContain">
+			<div class="message">
+				<div class="messageHeadTitle">我的通知</div>
+				<div style="width: 100%;height:271.25px;min-height:271.25px;display: flex!important;flex-wrap: wrap;overflow: scroll;">
+					<div class="messageBoxContain" 
+					v-for="messageItem in messageData">
+						<span class="messageContain" 
+						v-html="messageItem.messageContain">
+						</span>
+						<span class="messageTime">
+							<p>{{messageItem.messageTime}}</p>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="hotPart">
+				<div class="title">我的收藏</div>
+				<div class="hotContain" v-for="hotContainItem in hotContainData">
+					<div class="containTitle">
+						<img v-bind:src="hotContainItem.iconfont">
+						<p>{{hotContainItem.title}}</p>
+					</div>
+					<div class="containStar">
+						<p>{{hotContainItem.date}}</p>
+						<p>{{hotContainItem.time}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://cdn.bootcss.com/vue/2.4.1/vue.js"></script>
+<!-- <script type="text/javascript" src="../js/module.js" ></script> -->
+<script type="text/javascript" src="../js/myArticle.js" ></script>
+
+</html>

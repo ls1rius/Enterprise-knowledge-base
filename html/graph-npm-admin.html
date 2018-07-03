@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <style type="text/css">
+   </style>
+   <body style="height: 100%; margin: 0 ;background-color: transparent;border-radius: 15px;" >
+        <div style="background-color: #fff;height: 100%;border-radius: 15px;">
+            <div id="container" style="height: 100%; background-color: #fff;"></div>
+        </div>
+
+      <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+        <script type="text/javascript" src="../lib/echarts.js"></script>
+        <script type="text/javascript"  src="../lib/theme.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom,'macarons');
+var app = {};
+option = null;
+myChart.showLoading();
+$.getJSON('../json/npmdepgraph.min10.json', function (json) {
+    myChart.hideLoading();
+    myChart.setOption(option = {
+        title: {
+            text: '',
+            textStyle: {
+               color: '#000' ,
+               fontWeight:'bolder',
+               fontSize:'20'
+           }
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series : [
+            {
+                type: 'graph',
+                layout: 'none',
+                // progressiveThreshold: 700,
+                data: json.nodes.map(function (node) {
+                    return {
+                        x: node.x,
+                        y: node.y,
+                        id: node.id,
+                        name: node.label,
+                        symbolSize: node.size,
+                        itemStyle: {
+                            normal: {
+                                color: node.color
+                            }
+                        }
+                    };
+                }),
+                edges: json.edges.map(function (edge) {
+                    return {
+                        source: edge.sourceID,
+                        target: edge.targetID
+                    };
+                }),
+                label: {
+                    emphasis: {
+                        position: 'right',
+                        show: true
+                    }
+                },
+                roam: true,
+                focusNodeAdjacency: true,
+                lineStyle: {
+                    normal: {
+                        width: 0.5,
+                        curveness: 0.3,
+                        opacity: 0.7
+                    }
+                }
+            }
+        ]
+    }, true);
+});;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+
+
+myChart.on('click', function (params) {
+    var div = window.parent.document.getElementById('insideIframe');
+    console.log(div);
+    div.src = "readContent.html"
+    // div.children[0].src = "outlink/radar_third.html";
+});
+
+       </script>
+   </body>
+</html>

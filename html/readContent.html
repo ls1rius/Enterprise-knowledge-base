@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../css/module.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/readContent.css">
+  <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../lib/font/iconfont.css"> -->
+  <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_333342_w3ijxy57xziu23xr.css">
+  <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<div id="insideContain" style="margin: 0;">
+		<div id="centerContain">
+			<div class="contentTitle">
+				<div style="">周末啦,带上这几个技巧去拍樱花吧~</div>
+				<i class="iconfont icon-gengduo-tianchong" style="cursor:pointer;" v-on:click="showDropDown()">
+					<ul class="dropDown" v-if="isShowDropDown">
+						<li v-on:click="collectTheArticle()" v-text="isCollect?'取消收藏':'收藏文章'"></li>
+						<li v-on:click="startVersionPick()">切换版本</li>
+						<a href="../json/test.docx" target="_blank">下载该文档</a>
+					</ul>
+				</i>
+
+			</div>
+			<div class="contentBox">
+				<img src="../image/image_tmp.jpg" style="width: 640px;height: 11193px; ">
+			</div>
+			<div class="versionPickBlur" v-if="isPickingVersion" v-on:click="cancelVersionPick()"></div>
+			<div class="versionPick" v-if="isPickingVersion">
+				<div class="versionItem"  
+				v-for="(versionDataItem,index) in versionData"
+				v-on:click="pickVersion(index)">
+					<div class="leftGudie">
+						<div class="gudieBall" 
+						v-bind:style="{borderColor:versionDataItem.isCur?'#2a679a':'#ccc'}"></div>
+						<div class="gudieBar"  
+						v-bind:style="{backgroundColor:versionDataItem.isCur?'#2a679a':'#ccc'}"></div>
+					</div>
+					<div class="rightVersionBox" 
+					v-bind:style="{color:versionDataItem.isCur?'#2a679a':'#000'}">
+						<span style="font-size: 18px;font-weight: bold;">{{versionDataItem.time}}</span>
+						<span style="font-size: 14px;font-weight: thin;">{{versionDataItem.author}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="rightContain">
+			<div class="message">
+				<div class="messageHeadTitle">
+					<span>知识评论区</span>
+					<span class="commentBtn" v-on:click="switchToComment()">评论</span>
+				</div>
+
+				<div style="width: 100%;height:271.25px;min-height:271.25px;display: flex!important;flex-wrap: wrap;overflow: auto;">
+					<div class="messageBoxContain" 
+					v-for="messageItem in messageData">
+						<span class="messageContain" 
+						v-html="messageItem.messageContain">
+						</span>
+						<span class="messageTime">
+							<p>{{messageItem.messageTime}}</p>
+						</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="commentBox" 
+				v-if="isComment">
+				<div class="blur"></div>
+				<span class="title">评论</span>
+				<textarea type="file" placeholder="请输入评论内容...">
+					
+				</textarea>
+				<div class="commentSubmitBtnBox">
+					<div class="cancel" v-on:click="cancelComment()">取消</div>
+					<div class="submit" v-on:click="submitComment()">发表</div>
+				</div>
+			</div>
+			<div class="recommendPart">
+				<div class="title">关联知识
+				<p>以下信息根据您的浏览内容推荐</p></div>
+				<div class="recommendTips">
+					<span v-for="recommendTipItem in recommendTips">{{recommendTipItem.item}}</span>
+				</div>
+				<div class="recommendContain" v-for="recommendContainItem in recommendContain">
+					<div class="recommendTitle">{{recommendContainItem.title}}</div>
+					<div class="recommendContainInside">
+						<div class="recommendContainTipsBox">
+							<div class="recommendContainTips" v-for="recommendContainItemTip in recommendContainItem.tips">{{recommendContainItemTip.tip}}</div>
+						</div>
+						<div class="recommendContainAuthorInfo">
+							<span>{{recommendContainItem.author}}</span>
+							<span>{{recommendContainItem.time}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="../lib/vue.js"></script>
+<!-- <script type="text/javascript" src="../js/module.js" ></script> -->
+<script type="text/javascript" src="../js/readContent.js" ></script>
+</html>
