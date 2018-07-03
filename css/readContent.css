@@ -1,0 +1,494 @@
+body,html {
+	height: 720px;
+}
+select,option  {
+	font-size: 12px!important;
+	color: #000!important;
+}
+#insideContain {
+	width: 100%;
+	min-width: 700px;
+	height: 720px;
+	margin-left: 130px;
+	/*margin-top: 10px;*/
+	display: flex;
+	flex-wrap: nowrap;
+	background-color: #f4f4f4;
+}
+#centerContain {
+	width: 100%;
+	height: 720px;
+	min-width: 700px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px 20px 0px 20px;
+}
+#rightContain {
+	margin-left: 10px;
+	min-width: 325px;
+	width: 325px;
+	height: 720px;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+#insideContain #centerContain {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 15px 20px 15px 20px;
+	justify-content: center;
+}
+#rightContain {
+	background-color: transparent;
+}
+#centerContain {
+	padding: 20px 30px 20px 30px;
+}
+
+#insideContain #centerContain .introModule {
+	width: 100%;
+	height: 250px;
+	display: flex;
+}
+#rightContain .message {
+	width: 100%;
+	height: 50%;
+	/*background: lightblue;*/
+	overflow: hidden;
+}
+#rightContain .message .messageHeadTitle {
+	width: 100%;
+	min-height: 38.75px;
+	padding :0 15px 0 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #999999;
+}
+#rightContain .message .messageBoxContain{
+	width: 100%;
+	/*min-height: 38.75px;*/
+	max-height: 72px;
+	padding :10px 15px 10px 15px;
+	display: flex;
+	/*align-items: center;*/
+	border-bottom: 1px solid #999999;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+#rightContain .message .messageHeadTitle {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-self: center;
+}
+#rightContain .message .messageHeadTitle span {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#rightContain .message .messageHeadTitle .commentBtn  {
+	color:#06689F;
+	font-size: 14px; 
+	cursor: pointer
+}
+#rightContain .message .messageHeadTitle .commentBtn:hover {
+	color: red;
+}
+#rightContain .message .messageBoxContain {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+}
+#rightContain .message .messageBoxContain span {
+	display: block;
+	font-size: 12px;
+/*	height: 16px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;*/
+}
+#rightContain .message .messageBoxContain span i {
+	color: #06689F;
+}
+#rightContain .message .messageBoxContain .messageContain {
+	width: 60%;
+	overflow: hidden;
+	height: 100%;
+}
+#rightContain .message .messageBoxContain .messageTime{
+	width: 40%;
+	color: #999999;
+}
+#rightContain .message .messageBoxContain .messageTime p {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+	
+#rightContain .statistcsGraph {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	padding: 10px;
+}
+
+
+#rightContain {
+	background-color: transparent;
+}
+#rightContain .message,
+#rightContain .recommendPart {
+	width: 100%;
+	height: 350px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	padding: 20px;
+}
+#rightContain .recommendPart {
+	margin-top: 20px;	
+}
+#rightContain .recommendPart .title {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000000;
+}
+#rightContain .recommendPart .title  p {
+	margin: 0;
+	font-size: 10px;
+	color: #ccc;
+	margin-left: 10px;
+}
+#rightContain .recommendPart .recommendTips {
+	width: 100%;
+	height: 90px;
+	/*border-bottom: 1px solid #ccc;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+#rightContain .recommendPart .recommendTips span {
+	border: 1px solid #06689F;
+	width: 30%;
+	height: 25px;
+	margin:1.6667%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	color: #06689F;
+	font-size: 10px;
+}
+
+#rightContain .recommendPart .recommendContain {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #ccc;
+	flex-wrap: wrap;
+}
+
+#rightContain .recommendPart .recommendContain .recommendTitle {
+	width: 100%;
+	height: 25px;
+	display: flex;
+	align-items: center;
+
+}
+#rightContain .recommendPart .recommendContain .recommendContainInside {
+	width: 100%;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+#rightContain .recommendPart .recommendContain .recommendContainInside .recommendContainTipsBox {
+	display: flex;
+	align-items: center;
+}
+#rightContain .recommendPart .recommendContain .recommendContainInside .recommendContainTips {
+	padding: 0 8px 0 8px;
+	min-width: 45px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	background: #06689F;
+	color: #ffffff;
+	margin-right: 8px;
+	align-items: center;
+	border-radius: 10px;
+	font-size: 10px;
+} 
+#rightContain .recommendPart .recommendContain .recommendContainInside .recommendContainAuthorInfo {
+	display: flex;
+	align-items: center;
+}
+#rightContain .recommendPart .recommendContain .recommendContainInside .recommendContainAuthorInfo span {
+	margin-right: 8px;
+	font-size: 10px;
+	color: #ccc;
+}
+
+#centerContain .contentTitle{
+	width: 100%;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	padding: 0 25px 0 25px;
+}
+#centerContain .contentTitle div{
+	width: 100%;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	align-content: center;
+	align-items: center;
+	font-size: 26px;
+	font-weight: bold;
+	margin-left: 60px;
+}
+#centerContain .contentTitle i {
+	min-width: 60px;
+	width: 60px;
+	height: 40px;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#centerContain .contentTitle .dropDown {
+	list-style: none;
+	width: 80px;
+	min-width: 80px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	position: relative;
+
+}
+
+#centerContain .contentTitle .dropDown li,
+#centerContain .contentTitle .dropDown a {
+	height: 35px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	border-radius: 5px;
+	color: #000;
+}
+#centerContain .contentTitle .dropDown li:hover,
+#centerContain .contentTitle .dropDown a:hover{
+	background-color: #06689F;
+	color: #fff;
+}
+#centerContain .contentBox{
+	width: 100%;
+	height: 650px;
+	display: flex;
+	justify-content: center;
+	overflow: auto;
+
+}
+.blur {
+	width: 325px;
+	height: 350px;
+	/*background-color: #f1f1f1;*/
+	background-color: #999;
+	top: 0;
+	left: 0;
+	/*opacity: 0.5;*/
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	-webkit-filter: blur(15px) brightness(110%);
+	filter: blur(15px) brightness(110%);
+	background-image: var(--bg);
+}
+.commentBox {
+	width: 325px;
+	height: 350px;
+	/*background: #eee;*/
+	/*opacity: 0.5;*/
+	position: absolute;
+	top: 0px;
+	padding: 10px;
+	/*border: 1px solid #000;*/
+}
+.commentBox textarea{
+	width: 100%;
+	height: 250px;
+	display: block;
+	outline: none;
+	padding: 15px;
+	position: relative;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+.commentBox .title {
+	width: 100%;
+	height: 30px;
+	color: #000;
+	font-weight: bold;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	position: relative;
+}
+.commentSubmitBtnBox {
+	width: 100%;
+	height: 50px;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	flex-wrap: nowrap;
+	padding-left: 50px;
+	padding-right: 50px;
+	/*background-color: #f1f1f1;*/
+	/*background-color: red;*/
+}
+.commentSubmitBtnBox div {
+	position: relative;
+	width: 70px;
+	height: 30px;
+	background-color: #06689F;
+	border-radius: 5px;
+	margin-left: 5px;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-self: center;
+	align-items: center;
+	cursor: pointer;
+}
+.versionPickBlur {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	z-index: 666;
+	margin: auto;
+	background-color: #ccc;
+	opacity: 0.5;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	-webkit-filter: blur(15px) brightness(110%);
+	filter: blur(15px) brightness(110%);
+	background-image: var(--bg);
+}
+.versionPick {
+	position: absolute;
+	margin: auto;
+	width: 400px;
+	height: 700px;
+	z-index: 999;
+	top: 10px;
+	overflow: auto;
+	padding-top: 20px;
+	/*border-top: 20px solid #56a9a4;*/
+	padding-bottom: 20px;
+	background-color: #fff;
+	box-shadow: 3px 3px 3px #ccc;
+	border-radius: 5px;
+}
+.versionItem {
+	width: 100%;
+	height: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	display: flex;
+	flex-flow: nowrap;
+	cursor: pointer;
+}
+.versionItem .leftGudie {
+	width: 100px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.versionItem .leftGudie .gudieBall {
+	position: relative;
+	z-index: 666;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 3px solid #ccc; 
+	background-color: #fff;
+}
+.versionItem .leftGudie .gudieBar {
+	position: relative;
+	width: 4px;
+	height: 95px;
+	background-color: #ccc;
+	left: -10px;
+	top:5px;
+	z-index: 555;
+}
+.rightVersionBox {
+	width: 260px;
+	height: 100%;
+	/*padding-top: 20px;*/
+	padding-bottom: 20px;
+}
+
+.versionPick .versionItem:hover {
+	background-color: #bbdff0;
+	/*opacity: 0.5;*/
+}
+.versionPick .versionItem:first-child .rightVersionBox span:first-child:after{
+	content: "(最新)";
+	color: red;
+	font-size: 16px;
+}
+.rightVersionBox span {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	display: flex;
+	/*align-content: center;*/
+	/*align-items: center;*/
+	/*align-self: center;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

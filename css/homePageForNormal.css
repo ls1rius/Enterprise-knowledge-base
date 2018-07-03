@@ -1,0 +1,400 @@
+body,html {
+	height: 720px;
+}
+select,option  {
+	font-size: 12px!important;
+	color: #000!important;
+}
+#insideContain {
+	width: 100%;
+	min-width: 700px;
+	height: 720px;
+	margin-left: 130px;
+	/*margin-top: 10px;*/
+	display: flex;
+	flex-wrap: nowrap;
+	background-color: #f4f4f4;
+}
+#centerContain {
+	width: 100%;
+	height: 720px;
+	min-width: 700px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px 20px 0px 20px;
+}
+#rightContain {
+	margin-left: 10px;
+	min-width: 325px;
+	height: 720px;
+	width: 325px;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+
+#centerContain {
+	padding: 20px 30px 20px 30px;
+}
+
+#insideContain #centerContain .introModule {
+	width: 100%;
+	height: 270px;
+	display: flex;
+}
+#leftCarousel {
+	width: 60%;
+	height: 250px;
+}
+#leftCarousel img {
+	width: 100%;
+	height: 250px;
+}
+#leftCarousel .carousel-indicators {
+	bottom: 0px;
+	margin-left: -68%;
+}
+#leftCarousel .carouselIntro {
+	position: absolute;
+	bottom: 25px;
+	z-index: 15;
+	/*width: 60%;*/
+	height: 20px;
+	padding-left: 0;
+	margin-left: 5%;
+	text-align: center;
+	list-style: none;
+	display: block;
+	color: #ffffff;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#leftCarousel .carousel-indicators .active {
+	width: 20px;
+	height: 7px;
+	margin: 0;
+	background-color: #bfc3ca;
+}
+#leftCarousel .carousel-indicators li {
+	width: 7px;
+	height: 7px;
+	margin: 0px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+#rightIntro {
+	border:1px solid #06689F;
+	border-left: none;
+	width: 40%;
+	height: 250px;
+	padding: 13px;
+}
+#rightIntro span {
+	font-size: 20px;
+	line-height: 25px;
+	width: 100%;
+	height: 100%;
+
+	display: block;
+	overflow: hidden;
+}
+
+.searchModule {
+	width: 100%;
+	height: 160px;
+	border:1px solid #06689F;
+	border-top: none;
+}
+.headTitle {
+	width: 100%;
+	height: 45px;
+	background-color: rgb(43,87,154);
+	color: white;
+	/*background: -webkit-linear-gradient(left, #5ec1e4 , #56a9a4); /* Safari 5.1 - 6.0 */
+	/*background: -o-linear-gradient(right, #5ec1e4, #56a9a4); /* Opera 11.1 - 12.0 */
+	/*background: -moz-linear-gradient(right, #5ec1e4, #56a9a4); /* Firefox 3.6 - 15 */
+	/*background: linear-gradient(to right, #5ec1e4 , #56a9a4); /* 标准的语法 */
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.headTitle i {
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.buzzwordContain {
+	width: 100%;
+	height: 47px;
+	padding: 0 20px 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.buzzwordContain span{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 15px 5px 15px;
+	border:1px solid #06689f;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.searchBoxContain {
+	width: 100%;
+	height: 67px;
+	padding: 10px 20px 10px 20px;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.searchBoxContain input {
+	display: block;
+	width: 80%;
+	height: 100%;
+	padding-left: 2%;
+	outline: none;
+}
+.searchBoxContain .searchBtn {
+	width: 20%;
+	height: 100%;
+	background-color: #06689F;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: #ffffff;
+}
+.recommendModule {
+	width: 100%;
+	height: 250px;
+	border:1px solid #06689F;
+}
+.recommendBoxContain {
+	width: 100%;
+	height: 102px;
+	padding: 10px 20px 10px 20px;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.recommendBoxContain {
+	border-bottom:1px solid #06689F;
+	display: flex;
+	align-items: center;
+}
+.recommendBoxContain img {
+	width: 100px;
+	height: 70px;
+	border-radius: 10px;
+}
+.recommendBoxContain .recommendItem {
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+}
+.recommendBoxContain .recommendItem .recommendTitle,
+.recommendBoxContain .recommendItem .recommendInfo {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width: 90%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+}
+.recommendBoxContain .recommendItem .recommendTitle {
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+}
+.recommendBoxContain .recommendItem .recommendInfo {
+	font-size: 14px;
+	color: #999999;
+}
+.recommendBoxContain .recommendStatistcsItem {
+	width: 10%;
+	height: 100%;
+	padding-left: 10px;
+}
+.recommendBoxContain .recommendStatistcsItem .recommendStatistcsCount,
+.recommendBoxContain .recommendStatistcsItem .recommendStatistcsInfo {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width: 80%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+}
+.recommendBoxContain .recommendStatistcsItem .recommendStatistcsCount {
+	font-size: 16px;
+	color: #06689F;
+	font-weight: bold;
+}
+.recommendBoxContain .recommendStatistcsItem .recommendStatistcsInfo {
+	font-size: 14px;
+	color: #999999;
+}
+
+#rightContain .message {
+	width: 100%;
+	height: 50%;
+	/*background: lightblue;*/
+	overflow: hidden;
+}
+#rightContain .message .messageHeadTitle {
+	width: 100%;
+	min-height: 38.75px;
+	padding :0 15px 0 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #999999;
+}
+#rightContain .message .messageBoxContain{
+	width: 100%;
+	/*min-height: 38.75px;*/
+	max-height: 72px;
+	padding :10px 15px 10px 15px;
+	display: flex;
+	/*align-items: center;*/
+	border-bottom: 1px solid #999999;
+	overflow: hidden;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+#rightContain .message .messageHeadTitle {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-self: center;
+}
+#rightContain .message .messageHeadTitle span {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#rightContain .message .messageHeadTitle .commentBtn  {
+	color:#06689F;
+	font-size: 14px; 
+	cursor: pointer
+}
+#rightContain .message .messageHeadTitle .commentBtn:hover {
+	color: red;
+}
+#rightContain .message .messageBoxContain {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+}
+#rightContain .message .messageBoxContain span {
+	display: block;
+	font-size: 12px;
+/*	height: 16px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;*/
+}
+#rightContain .message .messageBoxContain span i {
+	color: #06689F;
+}
+#rightContain .message .messageBoxContain .messageContain {
+	width: 60%;
+	overflow: hidden;
+	height: 100%;
+}
+#rightContain .message .messageBoxContain .messageTime{
+	width: 40%;
+	color: #999999;
+}
+#rightContain .message .messageBoxContain .messageTime p {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+	
+	
+#rightContain .statistcsGraph {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#rightContain {
+	background-color: transparent;
+}
+#rightContain .message,
+#rightContain .statistcsGraph{
+	width: 100%;
+	height: 350px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	padding: 20px;
+}
+#rightContain .statistcsGraph {
+	margin-top: 20px;
+}
+
+
+#rightContain .statistcsGraph .statistcsGraphTitle,
+#rightContain .message .title {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

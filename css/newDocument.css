@@ -1,0 +1,154 @@
+body,html {
+	height: 720px;
+}
+select,option  {
+	font-size: 12px!important;
+	color: #000!important;
+}
+#insideContain {
+	width: 100%;
+	min-width: 700px;
+	height: 720px;
+	margin-left: 130px;
+	/*margin-top: 10px;*/
+	display: flex;
+	flex-wrap: nowrap;
+	background-color: #f4f4f4;
+}
+#centerContain {
+	width: 100%;
+	height: 720px;
+	min-width: 700px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px 20px 0px 20px;
+}
+#rightContain {
+	margin-left: 10px;
+	min-width: 325px;
+	width: 325px;
+	height: 720px;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+
+#centerContain {
+	padding: 20px 30px 20px 30px;
+}
+#rightContain {
+	padding: 20px 30px 20px 30px;
+}
+.catalogTitle {
+	width: 100%;
+	height: 35px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+	border-bottom: 1px solid #999999;
+}
+.catalogGraph {
+	width: 100%;
+	/*background-color: lightgreen;*/
+	height: 635px;
+}
+#centerContain {
+	width: 100%;
+	height: 100%;
+}
+#editArea .w-e-text-container {
+	height: 520px!important;
+}
+#centerContain .editBtn {
+	width: 100%;
+	height: 60px;
+	border:1px solid #ccc;
+	border-top: none;
+	display: flex;
+	/*justify-content: center;*/
+	align-items: center;
+	/*padding: 10px;*/
+	/*align-content: center;*/
+}
+#centerContain .editBtn>div {
+	min-width: 88px;
+	height: 38px;
+	border-radius: 5px;
+	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	margin-left: 10px;
+	margin-right: 10px;
+
+	cursor: pointer;
+}
+#centerContain .editBtn .sendBtn,
+#centerContain .editBtn .saveBtn{
+	background-color: #06689F;
+	box-shadow: 1px 1px 1px #999999;
+}
+#centerContain .editBtn>span {
+	display: block;
+	display: flex;
+	flex-wrap: nowrap;
+	min-width: 60px;
+	margin-right: -10px;
+	margin-left: 50px;
+}
+#editArea .title {
+	width: 100%;
+	height: 80px;
+}
+#editArea .title textarea {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	font-size: 20px;
+	color: #000000;
+	font-weight: bold;
+	border:1px solid #ccc;
+	border-top:none;
+	outline:none;
+}
+
+#cooperation {
+	width: 80%;
+	margin-left: 20px;
+	margin-right: 20px;
+	display: block;
+	z-index: 100001;
+	background-color: transparent;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+	z-index: 1111111;
+	
+}
+
+.w-e-text .redLine{
+	border-bottom:1px solid #FF0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
