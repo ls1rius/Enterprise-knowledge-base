@@ -1,0 +1,106 @@
+var insideContain = new Vue({
+	el:'#insideContain',
+	data:{
+		departs:[
+		{
+			index:0,
+			departName:'全部',
+		},
+		{
+			index:1,
+			departName:'财务部',
+		},
+		{
+			index:2,
+			departName:'研发部',
+		},
+		{
+			index:3,
+			departName:'UI部',
+		}
+		],
+		fileListData:[
+		{
+			fileListImage:'../image/example1.jpg',
+			fileListTitle:'虚拟货币市场主体的规范与指引',
+			fileListInfoAuthor:'韩梅梅',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'待审核'
+		},
+		{
+			fileListImage:'../image/example2.jpg',
+			fileListTitle:'中国货币市场基准利率的确立及其动态',
+			fileListInfoAuthor:'李雷',
+			fileListInfoTime:'2018/03/27',
+			fileListStatus:'通过'
+		},
+		{
+			fileListImage:'../image/example3.png',
+			fileListTitle:'论我国货币市场与资本市场的协调发展',
+			fileListInfoAuthor:'张鹏',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'通过'
+		},
+		{
+			fileListImage:'../image/example4.jpg',
+			fileListTitle:'货币市场基准利率的性质',
+			fileListInfoAuthor:'吴亦凡',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'未通过'
+		},
+		{
+			fileListImage:'../image/example5.png',
+			fileListTitle:'货币政策工具与货币市场基准利率',
+			fileListInfoAuthor:'小明',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'通过'
+		},
+		{
+			fileListImage:'../image/example6.jpg',
+			fileListTitle:'数字货币的理想与现实',
+			fileListInfoAuthor:'币者',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'未通过'
+		},
+		{
+			fileListImage:'../image/example7.png',
+			fileListTitle:'国际货币基金组织和世界银行上调巴西经济增长预期',
+			fileListInfoAuthor:'国际货币基金组织',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'未通过'
+		},
+		{
+			fileListImage:'../image/example8.png',
+			fileListTitle:'日本2017财年贸易顺差大幅减少',
+			fileListInfoAuthor:'日本',
+			fileListInfoTime:'2018/03/28',
+			fileListStatus:'未通过'
+		}
+		],
+		isShowDropDown:false,
+		isReviewing:false,
+		curStatus:'待审阅',
+		curIndex:0
+	},
+	methods:{
+		showDropDown:function(){
+			this.isShowDropDown = !this.isShowDropDown;
+		},
+		startReview:function(index){
+			this.isReviewing = true;
+			this.curIndex = index;
+			this.curStatus = this.fileListData[this.curIndex].fileListStatus;
+		},
+		backToMain:function(){
+			this.isReviewing = false;
+			this.fileListData[this.curIndex].fileListStatus = this.curStatus;
+		},
+		confirmToDelete:function(){
+			var confirmBox =confirm("确认将"+'\''+this.fileListData[this.curIndex].fileListTitle+'\''+"从审核列表删除吗?");
+			if(confirmBox){
+				this.fileListData.splice(this.curIndex,1);
+				this.isReviewing = false;
+			}
+		}
+	}
+})
